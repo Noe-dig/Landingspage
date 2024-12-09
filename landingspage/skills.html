@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landingspage</title>    
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <script src="all.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="dropdown">
+            <button class="dropbtn">
+                
+                <p>
+                    <i class="fa-solid fa-bars" id="hamburgerdropdown"></i>
+                </p>
+                
+            </button>
+            <div class="dropdown-content">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Thuis</a>
+                <a href="streefdoel.html"><i class="fa-solid fa-bullseye"></i> Streefdoel</a>
+                <a href="toekomst.html"><i class="fa-solid fa-timeline"></i> Toekomst</a>
+                <a href="wensen.html"><i class="fa-solid fa-fire-flame-simple"></i> Wensen</a>
+            </div>
+        </div>
+    </header>
+    <article>
+
+        <p id="ptop">Skills</p>
+        
+        <div class="grid-container2">
+
+            <canvas id="myChart" style="width:100%;max-width:60vw;"></canvas>
+
+            <script>
+                const xValues = ["HTML", "CSS", "C#", "JavaScript", "Krita", "Github"];
+                const yValues = [90, 80, 40, 80, 90, 70];
+                const barColors = ["OrangeRed", "DodgerBlue", "#702963", "Gold", "LightBlue", "DarkGray"];
+            
+                new Chart("myChart", {
+                    type: "bar",
+                    data: {
+                        labels: xValues,
+                        datasets: [{
+                            backgroundColor: barColors,
+                            data: yValues
+                        }]
+                    },
+                    options: {
+                        legend: { display: false },
+                        title: {
+                            display: true,
+                            text: "Mijn skills aan het einde van de opleiding",
+                            fontSize: 20,
+                            fontColor: "#34495e"
+                        },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                    fontColor: "#34495e"
+                                }
+                            }],
+                            xAxes: [{
+                                ticks: {
+                                    fontColor: "#34495e"
+                                }
+                            }]
+                        }
+                    }
+                });
+            </script>
+        </div>
+    </article>
+    <footer></footer>
+</body>
+</html>
